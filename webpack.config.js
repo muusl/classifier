@@ -4,7 +4,7 @@ var webpack = require("webpack")
 module.exports = env => {
   const build = env && env.build && env.build === "build"
   return {
-    entry: ["babel-polyfill", "./src/index.js"],
+    entry: ["babel-polyfill", build ? "./src/index.js" : "./test/index.js"],
     output: {
       path: path.resolve(__dirname, "build"),
       filename: build ? "build.js" : "script.js",
@@ -17,6 +17,11 @@ module.exports = env => {
     target: "node",
     node: {
       __dirname: true,
+    },
+    resolve: {
+      alias: {
+        classifier: path.resolve(__dirname, "src"),
+      },
     },
     module: {
       loaders: [
