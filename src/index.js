@@ -33,7 +33,7 @@ function chunkImage({ width, height, data }) {
   const chunkCount = Math.floor(width / chunkWidth)
 
   const chunked = []
-  for (let i = 0; i < width; i += chunkWidth) {
+  for (let i = 0; i < width - chunkWidth; i += chunkWidth) {
     let chunk = []
     // j=1 to chop off first layer to make image even height :)
     for (let j = 1; j < height; j++) {

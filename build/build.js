@@ -1446,7 +1446,7 @@ function chunkImage(_ref) {
   var chunkCount = Math.floor(width / chunkWidth);
 
   var chunked = [];
-  for (var i = 0; i < width; i += chunkWidth) {
+  for (var i = 0; i < width - chunkWidth; i += chunkWidth) {
     var chunk = [];
     // j=1 to chop off first layer to make image even height :)
     for (var j = 1; j < height; j++) {
