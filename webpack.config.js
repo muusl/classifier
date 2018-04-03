@@ -9,6 +9,8 @@ module.exports = env => {
       path: path.resolve(__dirname, "build"),
       filename: build ? "build.js" : "script.js",
       publicPath: path.resolve(__dirname, "build/") + "/",
+      library: "",
+      libraryTarget: "commonjs",
     },
     devServer: {
       contentBase: "./build",
